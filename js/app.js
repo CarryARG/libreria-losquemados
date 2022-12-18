@@ -18,13 +18,13 @@ function validar(){
 
 let carrito = []
 
-let seleccion = prompt("Hola! Desea comprar algún tipo de libro?")
+let seleccion = prompt("Hola! Desea comprar algún tipo de libro? si/no (en minuscula) :)")
 
 
 /*aca uso algunas validaciones con while porque... siempre hay un vivo que quiere romper los codigos XD*/
 while(seleccion != "si" && seleccion != "no"){
     alert("POR FAVOR INGRESA SI O NO LOCOOOO NO ES TAN DIFICIL!!");
-    seleccion = prompt("Hola! Desea comprar algún tipo de libro?")
+    seleccion = prompt("Hola! Desea comprar algún tipo de libro? si/no (en minuscula) :)")
 }
 
 if (seleccion == "si"){
@@ -39,7 +39,7 @@ if (seleccion == "si"){
 }
 
 while(seleccion != "no"){
-    let libro = prompt("Agrega un producto a tu carrito")
+    let libro = prompt("Agrega un producto a tu carrito (Por ejemplo: Manga)")
     let precio = 0
 
     if(libro == "Manga" || libro == "Enciclopedia" || libro == "Biografias" || libro == "Fantasia" || libro == "Psicologia" || libro == "Como dormir 8 horas en 20 minutos"){
@@ -65,12 +65,12 @@ while(seleccion != "no"){
             default:
                 break;
         }
-        let unidades = parseInt(prompt("¿Cuantas unidades quiere llevar?"))
+        let unidades = parseInt(prompt("¿Cuantas unidades quiere llevar? (solo numeros enteros)"))
 
         /*para mi, esta validacion es GOD*/
         while(Number.isInteger(unidades) == false){
             alert("POR FAVOR INGRESA UN NUMERO ENTERO LOCOOOO NO ES TAN DIFICIL!!");
-            unidades = prompt("¿Cuantas unidades quiere llevar?")
+            unidades = prompt("¿Cuantas unidades quiere llevar? (solo numeros enteros)")
         }
 
         carrito.push({libro, unidades, precio})
@@ -79,16 +79,16 @@ while(seleccion != "no"){
         alert("SIN STOCK")
     }
 
-    let seleccion2 = prompt("¿Desea seguir comprando?")
+    let seleccion2 = prompt("¿Desea seguir comprando? si/no (en minuscula)")
 
     while(seleccion2 != "si" && seleccion2 != "no"){
         alert("POR FAVOR INGRESA SI O NO LOCOOOO NO ES TAN DIFICIL!!");
-        seleccion2 = prompt("¿Desea seguir comprando?")
+        seleccion2 = prompt("¿Desea seguir comprando? si/no (en minuscula)")
     }
 
     /*aca uso una segunda validacion dentro de la misma para luego despedir al usuario, mostrando tambien la cantidad total de su compra*/
     while(seleccion2 === "no"){
-        alert("Gracias por su compra! Hasta luego!")
+        alert("Gracias por su compra! Hasta luego! :)")
         carrito.forEach((carritoFinal) => {
             console.log(`Libro: ${carritoFinal.libro}, unidades: ${carritoFinal.unidades}, total a pagar por producto ${carritoFinal.unidades * carritoFinal.precio}`)
         })
